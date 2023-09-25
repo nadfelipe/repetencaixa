@@ -3,6 +3,9 @@ let tilesX = 10;
 let tilesY = 10;
 let tileW, tileH, font;
 let larguraLinhaRect = '2';
+let modoMovimento;
+let movimentoEscolhido;
+const movimentos = ["direita", "esquerda", "subir", "descer", "sobeEsq", "desceEsq", "sobeDir", "desceDir"];
 const palavraWidths = {};
 const wordImages = {};
 let frase = "Um pequeno jabuti xereta viu dez cegonhas felizes.";
@@ -23,13 +26,30 @@ function setup() {
 function draw() {
   for (let i = 0; i < palavras.length; i++) {
     palavras[i].display();
-    movimentoAleatorio(palavras[i]);
+    setMovimento(palavras[i]);
+  }
+
+  setModoMovimento();
+}
+
+function setMovimento(palavra){
+  switch (modoMovimento) {
+    case "treme":
+      movimentaPalavra(palavra, true);
+      break;
+    case "direcao":
+      movimentaPalavra(palavra)
+      break;
+    default:
+      palavra.subir;
+      palavra.descer
+      break;
   }
 }
 
-function movimentoAleatorio(palavra) {
-  const movimentos = ["direita", "esquerda", "subir", "descer"];
-  const movimentoEscolhido = random(movimentos);
+function movimentaPalavra(palavra, aleatorio) {
+  if (aleatorio)
+    movimentoEscolhido = random(movimentos);
   
   switch (movimentoEscolhido) {
     case "direita":
@@ -44,29 +64,46 @@ function movimentoAleatorio(palavra) {
     case "descer":
       palavra.descer();
       break;
-    default:
-      palavra.esquerda();
+    case "sobeEsq":
       palavra.subir();
+      palavra.esquerda();
+      break;
+    case "desceEsq":
+      palavra.descer();
+      palavra.esquerda();
+      break;
+    case "sobeDir":
+      palavra.subir();
+      palavra.direita();
+      break;
+    case "desceDir":
+      palavra.descer();
+      palavra.direita();
       break;
   }
 }
 
-function detectaTecla(palavra) {
-  if (keyIsDown(LEFT_ARROW) || keyIsDown(65)) {
-    palavra.esquerda();
+function setModoMovimento() {
+  let radioButtons = document.getElementsByName("modoMovimento");
+  
+  for (let i = 0; i < radioButtons.length; i++) {
+      if (radioButtons[i].checked) {
+          modoMovimento = radioButtons[i].value;
+          break;
+      }
   }
 
-  if (keyIsDown(RIGHT_ARROW) || keyIsDown(68)) {
-    palavra.direita();
-  }
+  if (modoMovimento == 'direcao') {
+    let radioButtonsDirecao = document.getElementsByName("direcao");
 
-  if (keyIsDown(UP_ARROW) || keyIsDown(87)) {
-    palavra.subir();
+    for (let i = 0; i < radioButtonsDirecao.length; i++) {
+      if (radioButtonsDirecao[i].checked) {
+          movimentoEscolhido = radioButtonsDirecao[i].value;
+          break;
+      }
   }
-
-  if (keyIsDown(DOWN_ARROW) || keyIsDown(83)) {
-    palavra.descer();
   }
+  
 }
 
 function atualizarConteudo() {
@@ -86,6 +123,7 @@ function limparPalavras(){
 function resetCanvas() {
   limparPalavras();
   clear();
+  frase = "Um pequeno jabuti xereta viu dez cegonhas felizes.";
   displayFrase(frase);
   background(`${document.getElementById('cor-bg').value}`);
 }

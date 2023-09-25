@@ -23,7 +23,7 @@
         <div id="controles">
           <div>  
             <label for="frase">Texto</label>
-            <textarea name="frase" id="frase" placeholder="Um pequeno jabuti xereta viu dez cegonhas felizes."></textarea>
+            <textarea name="frase" id="frase">Um pequeno jabuti xereta viu dez cegonhas felizes.</textarea>
           </div>
 
           <div>
@@ -45,6 +45,45 @@
             <label for="cor-bg">Cor do Background</label>
             <input type="color" name="cor-bg" id="cor-bg" value="#332783">
           </div>
+
+          <fieldset>
+            <legend>Selecione o modo do movimento</legend>
+              <input type="radio" name="modoMovimento" id="opt-treme" value="treme" checked>
+              <label for="opt-treme">Tremer Palavras</label>
+
+              <input type="radio" name="modoMovimento" id="opt-direcao" value="direcao">
+              <label for="opt-direcao">Selecionar Direção</label>
+
+              <input type="radio" name="modoMovimento" id="opt-parar" value="parar">
+              <label for="opt-parar">Parar</label>
+          </fieldset>
+
+          <fieldset>
+            <legend>Selecione a direção</legend>
+              <input type="radio" name="direcao" id="opt-sobeEsq" value="sobeEsq" checked>
+              <label for="opt-sobeEsq">⬉</label>
+
+              <input type="radio" name="direcao" id="opt-desceEsq" value="desceEsq">
+              <label for="opt-desceEsq">⬋</label>
+
+              <input type="radio" name="direcao" id="opt-sobeDir" value="sobeDir">
+              <label for="opt-sobeDir">⬈</label>
+
+              <input type="radio" name="direcao" id="opt-desceDir" value="desceDir">
+              <label for="opt-desceDir">⬊</label>
+
+              <input type="radio" name="direcao" id="opt-dir" value="direita">
+              <label for="opt-dir">⮕</label>
+
+              <input type="radio" name="direcao" id="opt-esq" value="esquerda">
+              <label for="opt-esq">⬅︎</label>
+
+              <input type="radio" name="direcao" id="opt-cima" value="subir">
+              <label for="opt-cima">⬆︎</label>
+
+              <input type="radio" name="direcao" id="opt-baixo" value="descer">
+              <label for="opt-baixo">⬇︎</label>
+          </fieldset>
 
           <button onclick="atualizarConteudo()">Atualizar</button>
           <button>Aleatório</button>
