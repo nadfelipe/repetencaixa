@@ -4,7 +4,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/addons/p5.sound.min.js"></script>
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/home.css">
     <meta charset="utf-8" />
 
   </head>
@@ -15,29 +15,38 @@
                 <img src="./assets/logo.svg" alt="logotipo">
             </a>
             <nav>
-                <ul class="flex">
-                    <li><a href="./pages/playground.html">Playground</a></li>
-                    <li><a href="./pages/playground.html">Sobre</a></li>
+                <ul class="flex links-menu">
+                    <li><a href="./pages/playground.html">Gerador de Layout</a></li>
+                    <li><a href="./pages/playground.html">Sobre o projeto</a></li>
                 </ul>
             </nav>
         </header>
         <section class="apresentacao flex">
-            <div>
-                <h1>Repete e Encaixa</h1>
-                <h2>Projeto Tipografar</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime consectetur reiciendis laborum illo, magnam quidem ipsa quo, nihil libero obcaecati cumque voluptate tempore quia sapiente assumenda quos expedita possimus sequi?</p>
-                <button>Acesse o playground</button>
+            <div class="conteudo-apresentacao">
+                <div class="texto-apresentacao">
+                    <h1>Repete e Encaixa</h1>
+                    <p>"Repete e Encaixa" é um projeto experimental que visa criar composições tipográficas por meio de programação. O projeto explorou os conceitos de repetição e encaixe, utilizando uma abordagem modular para o grid de composição.</p>
+                    <a class="btn" href="./pages/playground.html">Gerar um layout</a>
+                </div>
+                <div class="howto-apresentacao">
+                    <h2>Como funciona?</h2>
+                    <ol>
+                        <li><p>Você digita uma frase;</p></li>
+                        <li><p>Seleciona as cores;</p></li>
+                        <li><p>Seleciona o movimento;</p></li>
+                        <li><p>E pronto! Só baixar o layout gerado.</p></li>
+                    </ol>
+                </div>
             </div>
+            <!-- todo: fazer animação da home -->
             <canvas id="canvas-apresentacao"></canvas>
         </section>
     </main>
-    <section class="wrapper">
-        <canvas id="canvas-footer"></canvas>
+    <section class="wrapper exemplos">
+        <!-- todo: colocar imagens geradas -->
     </section>
     <footer class="wrapper">
-        <p>© 2023 <a href="">danielfelipe</a></p>
+        <p>© 2023 <a href="https://www.instagram.com/danelfp/" target="_blank" rel="noopener">danelfp</a></p>
     </footer>
-
-    <script src="../js/repetencaixa.js"></script>
   </body>
 </html>

@@ -1,0 +1,50 @@
+.apresentacao {
+    flex-wrap: wrap;
+    height: 80vh;
+    align-items: flex-start;
+}
+
+.conteudo-apresentacao {
+    width: 55%;
+    height: 100%;
+}
+
+.texto-apresentacao {
+    min-width: 770px;
+    height: 60%;
+    background: var(--tertiary);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: var(--black);
+}
+
+.texto-apresentacao>p {
+    margin-top: 1rem;
+}
+
+.texto-apresentacao>.btn {
+    margin-top: 3rem;
+}
+
+.howto-apresentacao {
+    background-color: var(--background);
+    height: 40%;
+    padding: 10px;
+}
+
+.howto-apresentacao {
+    color: var(--white);
+}
+
+#canvas-apresentacao {
+    background-color: var(--secondary);
+    width: calc(100% - 55%);
+    height: 100%;
+}
+
+.exemplos{
+    background-color: var(--primary);
+    height: 60vh;
+}

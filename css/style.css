@@ -1,11 +1,12 @@
-@import url('https://fonts.googleapis.com/css?family=Space Grotesk:700|Urbanist:400');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Urbanist:wght@400;600&display=swap');
 
 :root {
-  --text: #1d1d1b;
-  --background: #fbedb1;
+  --black: #1d1d1b;
+  --white: #FFFCEE;
+  --background: #332783;
   --primary: #FF6689;
   --secondary: #2ec2b3;
-  --accent: #035917;
+  --tertiary: #FCD422;
 }
 
 * {
@@ -20,32 +21,53 @@ ul, ol {
 
 a {
   text-decoration: none;
+  color: inherit;
+  font-weight: 600;
 }
 
-html {font-size: 100%;} /* 16px */
+p {
+  color: inherit;
+}
+
+html {
+  font-size: 100%;
+}
 
 body {
   font-family: 'Urbanist';
   font-weight: 400;
-  background-color: var(--background);
+  background-color: var(--primary);
 }
 
 h1, h2, h3, h4, h5 {
   font-family: 'Space Grotesk';
   font-weight: 700;
+  color: inherit;
 }
 
-h1 {font-size: 5.652rem; /* 90.4px */}
+h1 {
+  font-size: 5.652rem;
+}
 
-h2 {font-size: 3.997rem; /* 64px */}
+h2 {
+  font-size: 3.997rem;
+}
 
-h3 {font-size: 2.827rem; /* 45.28px */}
+h3 {
+  font-size: 2.827rem;
+}
 
-h4 {font-size: 1.999rem; /* 32px */}
+h4 {
+  font-size: 1.999rem;
+}
 
-h5 {font-size: 1.414rem; /* 22.56px */}
+h5 {
+  font-size: 1.414rem;
+}
 
-small {font-size: 0.707rem; /* 11.36px */}
+small {
+  font-size: 0.707rem;
+}
 
 canvas {
   display: block;
@@ -55,11 +77,44 @@ canvas {
   margin: 0 auto;
   width: 90%;
   max-width: 1440px;
-  padding: 0 20px;
 }
 
 .flex {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.menu {
+  padding: 10px 20px;
+  background-color: var(--background);
+  color: var(--white);
+}
+
+.links-menu>li:first-child {
+  margin-right: 1rem;
+}
+
+.btn {
+  background: var(--secondary);
+  color: var(--black);
+  display: block;
+  /* width: fit-content; */
+  text-align: center;
+  padding: 10px 30px;
+  border: 2px solid var(--black);
+  transition: all 0.2s ease;
+  font-weight: 600;
+}
+
+.btn:hover {
+  border-radius: 20px;
+}
+
+footer {
+  text-align: right;
+  padding: 10px;
+  background-color: var(--tertiary);
+  color: var(--black);
+  font-weight: 600;
 }
