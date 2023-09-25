@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/addons/p5.sound.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <main class="wrapper">
+      <header class="menu flex">
+        <a href="../index.html">
+          <img src="../assets/logo.svg" alt="logotipo" />
+        </a>
+        <nav>
+          <ul class="flex">
+            <li><a href="./playground.html">Playground</a></li>
+            <li><a href="./pages/playground.html">Sobre</a></li>
+          </ul>
+        </nav>
+      </header>
+      <section class="flex">
+        <div id="controles">
+          <div>  
+            <label for="frase">Texto</label>
+            <textarea name="frase" id="frase" placeholder="Um pequeno jabuti xereta viu dez cegonhas felizes."></textarea>
+          </div>
+
+          <div>
+            <label for="cor-texto">Cor do Texto</label>
+            <input type="color" name="cor-texto" id="cor-texto" value="#FFFCEE">
+          </div>
+            
+          <div>
+            <label for="cor-rect">Cor do Retângulo</label>
+            <input type="color" name="cor-rect" id="cor-rect" value="#FF3333">
+          </div>
+
+          <div>
+            <label for="cor-stroke">Cor da Linha do Retângulo</label>
+            <input type="color" name="cor-stroke" id="cor-stroke" value="#FF6689">
+          </div>
+          
+          <div>
+            <label for="cor-bg">Cor do Background</label>
+            <input type="color" name="cor-bg" id="cor-bg" value="#332783">
+          </div>
+
+          <button onclick="atualizarConteudo()">Atualizar</button>
+          <button>Aleatório</button>
+          <button onclick="salvarLayout()">Salvar Layout</button>
+          <button onclick="resetCanvas()">Reset</button>
+        </div>
+        <canvas id="gerador-layout"></canvas>
+      </section>
+    </main>
+    <footer class="wrapper">
+      <p>© 2023 <a href="">danielfelipe</a></p>
+    </footer>
+    <script src="../js/sketch.js"></script>
+    <script src="../js/word.js"></script>
+  </body>
+</html>

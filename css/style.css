@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css?family=Space Grotesk:700|Urbanist:400');
+
+:root {
+  --text: #1d1d1b;
+  --background: #fbedb1;
+  --primary: #FF6689;
+  --secondary: #2ec2b3;
+  --accent: #035917;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul, ol {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+html {font-size: 100%;} /* 16px */
+
+body {
+  font-family: 'Urbanist';
+  font-weight: 400;
+  background-color: var(--background);
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Space Grotesk';
+  font-weight: 700;
+}
+
+h1 {font-size: 5.652rem; /* 90.4px */}
+
+h2 {font-size: 3.997rem; /* 64px */}
+
+h3 {font-size: 2.827rem; /* 45.28px */}
+
+h4 {font-size: 1.999rem; /* 32px */}
+
+h5 {font-size: 1.414rem; /* 22.56px */}
+
+small {font-size: 0.707rem; /* 11.36px */}
+
+canvas {
+  display: block;
+}
+
+.wrapper {
+  margin: 0 auto;
+  width: 90%;
+  max-width: 1440px;
+  padding: 0 20px;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
