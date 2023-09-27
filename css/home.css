@@ -66,8 +66,8 @@
 
 #canvas-apresentacao {
     background-color: var(--primary);
-    width: calc(100% - 55%);
-    height: 100%;
+    width: calc(100% - 55%) !important;
+    height: 100% !important;
 }
 
 #exemplos {
@@ -103,7 +103,7 @@
     }
 
     #canvas-apresentacao {
-        display: none
+        display: none;
     }
 }
 
