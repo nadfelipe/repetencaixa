@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/addons/p5.sound.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="../css/style.css" />
-    <link rel="stylesheet" type="text/css" href="../css/playground.css" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../css/playground.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/addons/p5.sound.min.js"></script>
   </head>
   <body>
     <main class="wrapper">
       <header class="menu flex">
         <a href="../index.html">
-            <img src="../assets/logo.svg" alt="logotipo">
+          <img src="../assets/logo_alt.svg" alt="logotipo">
         </a>
         <nav>
             <ul class="flex links-menu">
@@ -21,76 +21,153 @@
             </ul>
         </nav>
       </header>
-      <section class="flex">
-        <div id="controles">
-          <div>  
+      <section id="gerador-layout-section" class="flex">
+        <div id="controles" class="flex-column">
+          <div class="flex-column mt1">  
             <label for="frase">Texto</label>
             <textarea name="frase" id="frase">Um pequeno jabuti xereta viu dez cegonhas felizes.</textarea>
           </div>
 
-          <div>
-            <label for="cor-texto">Cor do Texto</label>
-            <input type="color" name="cor-texto" id="cor-texto" value="#FFFCEE">
-          </div>
-            
-          <div>
-            <label for="cor-rect">Cor do Retângulo</label>
-            <input type="color" name="cor-rect" id="cor-rect" value="#FF3333">
+          <div class="mt1">
+            <input type="checkbox" name="grid" id="grid">
+            <label class="label-alt" for="grid">Mostrar Grid</label>
           </div>
 
-          <div>
-            <label for="cor-stroke">Cor da Linha do Retângulo</label>
-            <input type="color" name="cor-stroke" id="cor-stroke" value="#FF6689">
-          </div>
-          
-          <div>
+          <div class="flex-column mt1">
             <label for="cor-bg">Cor do Background</label>
             <input type="color" name="cor-bg" id="cor-bg" value="#332783">
           </div>
 
-          <fieldset>
+          <div class="flex-column mt1">
+            <label for="cor-texto">Cor do Texto</label>
+            <input type="color" name="cor-texto" id="cor-texto" value="#FFFCEE">
+          </div>
+            
+          <div class="flex-column mt1">
+            <label for="cor-rect">Cor do Retângulo</label>
+            <input type="color" name="cor-rect" id="cor-rect" value="#FF3333">
+          </div>
+
+          <div class="flex-column mt1">
+            <label for="cor-stroke">Cor da Linha do Retângulo</label>
+            <input type="color" name="cor-stroke" id="cor-stroke" value="#FF6689">
+          </div>
+
+          <div class="flex">
+            <button class="btn" onclick="atualizarConteudo()">Atualizar Layout</button>
+            <button class="btn" onclick="resetCanvas()">Reset</button>
+          </div>
+          
+          <fieldset class="flex-column fieldset-modomovimento">
             <legend>Selecione o modo do movimento</legend>
-              <input type="radio" name="modoMovimento" id="opt-treme" value="treme" checked>
-              <label for="opt-treme">Tremer Palavras</label>
+            <div>
+              <input type="radio" name="modoMovimento" id="opt-direcao" value="direcao" checked>
+              <label class="label-alt" for="opt-direcao">Direção Única</label>
+            </div>
 
-              <input type="radio" name="modoMovimento" id="opt-direcao" value="direcao">
-              <label for="opt-direcao">Selecionar Direção</label>
+            <div>
+              <input type="radio" name="modoMovimento" id="opt-treme" value="treme">
+              <label class="label-alt" for="opt-treme">Tremer Palavras</label>
+            </div>
 
+            <div>
               <input type="radio" name="modoMovimento" id="opt-parar" value="parar">
-              <label for="opt-parar">Parar</label>
+              <label class="label-alt" for="opt-parar">Parado</label>
+            </div>
           </fieldset>
 
-          <fieldset>
+          <fieldset class="flex fieldset-direcao">
             <legend>Selecione a direção</legend>
-              <input type="radio" name="direcao" id="opt-sobeEsq" value="sobeEsq" checked>
-              <label for="opt-sobeEsq">⬉</label>
+            <div class="radio-btn">
+              <label for="opt-sobeEsq">
+                <input class="radio-input" type="radio" name="direcao" id="opt-sobeEsq" value="sobeEsq" checked>
+                <span class="radio-tile">
+                  <span class="radio-icon">
+                    <img src="../assets/arrows/arrow-up-left.svg" alt="Seta para cima esquerda">
+                  </span>
+                </span>
+              </label>
+            </div>
 
-              <input type="radio" name="direcao" id="opt-desceEsq" value="desceEsq">
-              <label for="opt-desceEsq">⬋</label>
+            <div class="radio-btn">
+              <label class="radio-icon" for="opt-desceEsq">
+                <input class="radio-input" type="radio" name="direcao" id="opt-desceEsq" value="desceEsq">
+                <span class="radio-tile">
+                  <span class="radio-icon">
+                    <img src="../assets/arrows/arrow-down-left.svg" alt="Seta para baixo esquerda">
+                  </span>
+                </span>
+              </label>
+            </div>
 
-              <input type="radio" name="direcao" id="opt-sobeDir" value="sobeDir">
-              <label for="opt-sobeDir">⬈</label>
+            <div class="radio-btn">
+              <label class="radio-icon" for="opt-sobeDir">
+                <input class="radio-input" type="radio" name="direcao" id="opt-sobeDir" value="sobeDir">
+                <span class="radio-tile">
+                  <span class="radio-icon">
+                    <img src="../assets/arrows/arrow-up-right.svg" alt="Seta para cima direita">
+                  </span>
+                </span>
+              </label>
+            </div>
 
-              <input type="radio" name="direcao" id="opt-desceDir" value="desceDir">
-              <label for="opt-desceDir">⬊</label>
+            <div class="radio-btn">
+              <label class="radio-icon" for="opt-desceDir">
+                <input class="radio-input" type="radio" name="direcao" id="opt-desceDir" value="desceDir">
+                <span class="radio-tile">
+                  <span class="radio-icon">
+                    <img src="../assets/arrows/arrow-down-right.svg" alt="Seta para baixo direita">
+                  </span>
+                </span>
+              </label>
+            </div>
 
-              <input type="radio" name="direcao" id="opt-dir" value="direita">
-              <label for="opt-dir">⮕</label>
+            <div class="radio-btn">
+              <label class="radio-icon" for="opt-dir">
+                <input class="radio-input" type="radio" name="direcao" id="opt-dir" value="direita">
+                <span class="radio-tile">
+                  <span class="radio-icon">
+                    <img src="../assets/arrows/arrow-right.svg" alt="Seta para a direita">
+                  </span>
+                </span>
+              </label>
+            </div>
 
-              <input type="radio" name="direcao" id="opt-esq" value="esquerda">
-              <label for="opt-esq">⬅︎</label>
+            <div class="radio-btn">
+              <label class="radio-icon" for="opt-esq">
+                <input class="radio-input" type="radio" name="direcao" id="opt-esq" value="esquerda">
+                <span class="radio-tile">
+                  <span class="radio-icon">
+                    <img src="../assets/arrows/arrow-left.svg" alt="Seta para a esquerda">
+                  </span>
+                </span>
+              </label>
+            </div>
 
-              <input type="radio" name="direcao" id="opt-cima" value="subir">
-              <label for="opt-cima">⬆︎</label>
+            <div class="radio-btn">
+              <label class="radio-icon" for="opt-cima">
+                <input class="radio-input" type="radio" name="direcao" id="opt-cima" value="subir">
+                <span class="radio-tile">
+                  <span class="radio-icon">
+                    <img src="../assets/arrows/arrow-up.svg" alt="Seta para cima">
+                  </span>
+                </span>
+              </label>
+            </div>
 
-              <input type="radio" name="direcao" id="opt-baixo" value="descer">
-              <label for="opt-baixo">⬇︎</label>
+            <div class="radio-btn">
+              <label class="radio-icon" for="opt-baixo">
+                <input class="radio-input" type="radio" name="direcao" id="opt-baixo" value="descer">
+                <span class="radio-tile">
+                  <span class="radio-icon">
+                    <img src="../assets/arrows/arrow-down.svg" alt="Seta para baixo">
+                  </span>
+                </span>
+              </label>
+            </div>
           </fieldset>
 
-          <button onclick="atualizarConteudo()">Atualizar</button>
-          <button>Aleatório</button>
-          <button onclick="salvarLayout()">Salvar Layout</button>
-          <button onclick="resetCanvas()">Reset</button>
+          <button class="btn" onclick="salvarLayout()">Salvar Layout</button>
         </div>
         <canvas id="gerador-layout"></canvas>
       </section>

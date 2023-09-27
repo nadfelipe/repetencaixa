@@ -98,6 +98,11 @@ canvas {
   align-items: center;
 }
 
+.flex-column{
+  display: flex;
+  flex-direction: column;
+}
+
 .menu {
   padding: 10px 20px;
   background-color: var(--background);
