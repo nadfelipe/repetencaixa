@@ -24,26 +24,44 @@
         <section class="apresentacao flex">
             <div class="conteudo-apresentacao">
                 <div class="texto-apresentacao">
-                    <h1>Repete e Encaixa</h1>
-                    <p>"Repete e Encaixa" é um projeto experimental que visa criar composições tipográficas por meio de programação. O projeto explorou os conceitos de repetição e encaixe, utilizando uma abordagem modular para o grid de composição.</p>
-                    <a class="btn" href="./pages/playground.html">Gerar um layout</a>
+                    <h1 id="titulo-home">Repete e Encaixa</h1>
+                    <p>Este é um projeto experimental que busca criar composições tipográficas usando programação. Brincamos com as ideias de repetição e encaixe, adotando uma abordagem modular para o grid de composição e tendo algumas opções de movimentar as palavras, que no final podem ser usadas também de forma estática.</p>
+                    <a class="btn" href="./pages/playground.html">Gerar um Layout</a>
                 </div>
-                <div class="howto-apresentacao">
-                    <h2>Como funciona?</h2>
-                    <ol>
-                        <li><p>Você digita uma frase;</p></li>
-                        <li><p>Seleciona as cores;</p></li>
-                        <li><p>Seleciona o movimento;</p></li>
-                        <li><p>E pronto! Só baixar o layout gerado.</p></li>
+                <div class="hiw-apresentacao">
+                    <h2 id="titulo-hiw">Como funciona?</h2>
+                    <ol class="lista-hiw">
+                        <li>
+                            <h3>Você digita uma frase</h3>
+                            <p>Só colocar qualquer frase que desejar!</p>
+                        </li>
+                        <li>
+                            <h3>Seleciona as cores</h3>
+                            <p>Mude as cores dos elementos como preferir.</p>
+                        </li>
+                        <li>
+                            <h3>Seleciona o movimento</h3>
+                            <p>Decida a forma que as palavras irão se movimentar.</p>
+                        </li>
+                        <li>
+                            <h3>E pronto! Só baixar o Layout gerado.</h3>
+                            <p>Você tem a opção de baixar uma imagem do seu Layout.</p>
+                        </li>
                     </ol>
                 </div>
             </div>
-            <!-- todo: fazer animação da home -->
             <canvas id="canvas-apresentacao"></canvas>
         </section>
     </main>
-    <section class="wrapper exemplos">
-        <!-- todo: colocar imagens geradas -->
+    <section class="wrapper" id="exemplos">
+        <ul>
+            <li class="flex"><img src="./assets/layout (1).png" alt=""></li>
+            <li class="flex"><img src="./assets/layout (1).png" alt=""></li>
+            <li class="flex"><img src="./assets/layout (1).png" alt=""></li>
+            <li class="flex"><img src="./assets/layout (1).png" alt=""></li>
+            <li class="flex"><img src="./assets/layout (1).png" alt=""></li>
+            <li class="flex"><img src="./assets/layout (1).png" alt=""></li>
+        </ul>
     </section>
     <footer class="wrapper">
         <p>© 2023 <a href="https://www.instagram.com/danelfp/" target="_blank" rel="noopener">danelfp</a></p>
