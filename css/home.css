@@ -60,17 +60,6 @@
     margin-top: 0;
 }
 
-.lista-hiw li::before {
-    content: "";
-    position: absolute;
-    width: 15px;
-    height: 15px;
-    background: var(--primary);
-    border: 1px solid var(--secondary);
-    left: -32px;
-    top: 15px;
-}
-
 .lista-hiw li h3{
   font-size: 1.8rem;
 }

@@ -98,7 +98,7 @@ canvas {
   align-items: center;
 }
 
-.flex-column{
+.flex-column {
   display: flex;
   flex-direction: column;
 }
@@ -111,6 +111,24 @@ canvas {
 
 .links-menu>li:first-child {
   margin-right: 1rem;
+}
+
+.links-menu>li>a {
+  padding: 5px;
+  border: 2px solid var(--background);
+  transition: all 0.2s ease;
+}
+
+.links-menu>li>a:hover {
+  background-color: var(--primary);
+  border: 2px dashed var(--tertiary);
+  color: var(--white);
+  border-radius: 5px;
+}
+
+.link-ativo {
+  background-color: var(--tertiary);
+  border: 2px solid var(--black);
 }
 
 .btn {

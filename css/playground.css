@@ -34,7 +34,7 @@ label, legend {
     font-family: 'Urbanist', sans-serif;
     margin-top: 10px;
     color: var(--black);
-    border: 3px solid var(--black);
+    border: 3px dashed var(--black);
     background-color: var(--white);
 }
 
@@ -52,7 +52,7 @@ input[type="color"] {
 }
 
 input[type="color"]::-webkit-color-swatch {
-    border: 3px solid #000000;
+    border: 3px dashed #000000;
     transition: all 0.2s ease;
 }
 
@@ -95,7 +95,7 @@ input[type="color"]::-webkit-color-swatch:hover {
     justify-content: center;
     width: 65px;
     min-height: 65px;
-    border: 3px solid var(--primary);
+    border: 3px dashed var(--primary);
     background-color: var(--background);
     transition: all 0.2s ease;
     cursor: pointer;
@@ -126,6 +126,7 @@ input[type="color"]::-webkit-color-swatch:hover {
 .label-alt {
   font-family: 'Urbanist', sans-serif;
   font-weight: 400;
+  cursor: pointer;
 }
 
 .mt1 {
