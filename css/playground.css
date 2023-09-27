@@ -16,14 +16,19 @@ label, legend {
 }
 
 #gerador-layout-section {
-    height: 90vh;
     padding: 10px 20px;
     justify-content: space-between;
 }
 
+#gerador-layout {
+    height: 100% !important;
+    width: 80% !important;
+}
+
 #controles {
-    height: 90%;
+    height: 100%;
     padding-right: 2rem;
+    margin-bottom: 2rem;
 }
 
 #frase {
@@ -61,11 +66,13 @@ input[type="color"]::-webkit-color-swatch:hover {
 }
 
 .fieldset-direcao {
-    flex-wrap: wrap;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
     user-select: none;
     border: none;
     margin-top: 1rem;
+    width: 100%;
 }
 
 .radio-btn {
@@ -119,21 +126,34 @@ input[type="color"]::-webkit-color-swatch:hover {
     margin-top: 2rem;
 }
 
-.fieldset-modomovimento > div {
+.fieldset-modomovimento>div {
     margin-top: 0.5rem;
 }
 
 .label-alt {
-  font-family: 'Urbanist', sans-serif;
-  font-weight: 400;
-  cursor: pointer;
+    font-family: 'Urbanist', sans-serif;
+    font-weight: 400;
+    cursor: pointer;
 }
 
 .mt1 {
     margin-top: 1rem;
 }
 
-.btn { 
+.btn {
     margin-top: 2rem;
     background-color: var(--tertiary);
+}
+
+@media screen and (max-width: 1400px) {
+    #gerador-layout-section {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    #controles {
+        width: 100%;
+        max-width: 500px;
+        padding: 0;
+    }
 }
