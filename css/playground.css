@@ -10,6 +10,10 @@ label, legend {
     color: var(--black);
 }
 
+footer {
+    padding: 10px 20px;
+}
+
 .menu {
     background-color: var(--white);
     color: var(--black);
