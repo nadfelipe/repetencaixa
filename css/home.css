@@ -1,6 +1,7 @@
 .apresentacao {
     flex-wrap: wrap;
     height: 85vh;
+    min-height: 1000px;
 }
 
 .conteudo-apresentacao {
