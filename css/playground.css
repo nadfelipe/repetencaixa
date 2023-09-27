@@ -3,7 +3,7 @@ body, footer {
 }
 
 label, legend {
-    font-family: 'Space Grotesk';
+    font-family: 'Space Grotesk', sans-serif;
     font-weight: 700;
     font-size: 1.1rem;
     text-align: left;
@@ -22,12 +22,24 @@ label, legend {
 }
 
 #controles {
-    height: 80%;
+    height: 90%;
     padding-right: 2rem;
 }
 
-#logo-object {
-    pointer-events: none;
+#frase {
+    resize: none;
+    width: 100%;
+    height: 100px;
+    padding: 5px;
+    font-family: 'Urbanist', sans-serif;
+    margin-top: 10px;
+    color: var(--black);
+    border: 3px solid var(--black);
+    background-color: var(--white);
+}
+
+#frase:focus {
+    outline: none;
 }
 
 input[type="color"] {
@@ -112,7 +124,7 @@ input[type="color"]::-webkit-color-swatch:hover {
 }
 
 .label-alt {
-  font-family: 'Urbanist';
+  font-family: 'Urbanist', sans-serif;
   font-weight: 400;
 }
 
