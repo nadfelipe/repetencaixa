@@ -45,14 +45,25 @@ function setMovimento(palavra) {
   switch (modoMovimento) {
     case "treme":
       movimentaPalavra(palavra, true);
+      tooglehabilitaDirecoes(false);
       break;
     case "direcao":
       movimentaPalavra(palavra);
+      tooglehabilitaDirecoes(true);
       break;
     default:
       palavra.subir;
       palavra.descer;
+      tooglehabilitaDirecoes(false);
       break;
+  }
+}
+
+function tooglehabilitaDirecoes(habilita) {
+  if (habilita) {
+    document.getElementById('direcaoMovimento').classList.remove('desabilita')
+  } else {
+    document.getElementById('direcaoMovimento').classList.add('desabilita')
   }
 }
 
@@ -135,22 +146,25 @@ function resetInputs() {
   document.getElementById("cor-texto").value = "#FFFCEE";
   document.getElementById("cor-rect").value = "#FF3333";
   document.getElementById("cor-stroke").value = "#FF6689";
-  document.getElementById("frase").value = "Um pequeno jabuti xereta viu dez cegonhas felizes.";
+  document.getElementById("frase").value =
+    "Um pequeno jabuti xereta viu dez cegonhas felizes.";
 }
 
 function resetRadio(name) {
-  let radioInputs = document.querySelectorAll(`input[type="radio"][name="${name}"]`);
+  let radioInputs = document.querySelectorAll(
+    `input[type="radio"][name="${name}"]`
+  );
 
   radioInputs[0].checked = true;
 
-  radioInputs.forEach(function(input, index) {
+  radioInputs.forEach(function (input, index) {
     let label = document.querySelector('label[for="' + input.id + '"]');
     if (index === 0) {
       input.checked = true;
-      label.classList.remove('radio-unchecked-style');
+      label.classList.remove("radio-unchecked-style");
     } else {
       input.checked = false;
-      label.classList.add('radio-unchecked-style');
+      label.classList.add("radio-unchecked-style");
     }
   });
 }

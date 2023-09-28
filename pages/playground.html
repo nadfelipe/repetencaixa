@@ -2,8 +2,22 @@
 <html lang="pt-br">
   <head>
     <meta charset="utf-8" />
-    <title>RepetEncaixa | Gerador de Layout</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>RepetEncaixa | Gerador de Layout</title>
+    <meta name="title" content="RepetEncaixa | Gerador de Layout" />
+    <meta name="description" content="Este é um projeto experimental que busca criar composições tipográficas usando programação. Brincamos com as ideias de repetição e encaixe, adotando uma abordagem modular para o grid de composição e tendo algumas opções de movimentar as palavras, que no final podem ser usadas também de forma estática." />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://repetencaixa.vercel.app/pages/playground.html" />
+    <meta property="og:title" content="RepetEncaixa | Gerador de Layout" />
+    <meta property="og:description" content="Este é um projeto experimental que busca criar composições tipográficas usando programação. Brincamos com as ideias de repetição e encaixe, adotando uma abordagem modular para o grid de composição e tendo algumas opções de movimentar as palavras, que no final podem ser usadas também de forma estática." />
+
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://repetencaixa.vercel.app/pages/playground.html" />
+    <meta property="twitter:title" content="RepetEncaixa | Gerador de Layout" />
+    <meta property="twitter:description" content="Este é um projeto experimental que busca criar composições tipográficas usando programação. Brincamos com as ideias de repetição e encaixe, adotando uma abordagem modular para o grid de composição e tendo algumas opções de movimentar as palavras, que no final podem ser usadas também de forma estática." />
+
     <link rel="stylesheet" type="text/css" href="../css/style.css" />
     <link rel="stylesheet" type="text/css" href="../css/playground.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.js"></script>
@@ -49,7 +63,7 @@
           </div>
 
           <div class="flex-column mt1">
-            <label for="cor-stroke">Cor da Linha do Retângulo</label>
+            <label for="cor-stroke">Cor das Linhas - Retângulo e Grid</label>
             <input type="color" name="cor-stroke" id="cor-stroke" value="#FF6689">
           </div>
 
@@ -76,7 +90,7 @@
             </div>
           </fieldset>
 
-          <fieldset class="fieldset-direcao">
+          <fieldset id="direcaoMovimento" class="fieldset-direcao">
             <legend>Selecione a direção</legend>
             <div class="radio-btn">
               <label for="opt-sobeEsq">

@@ -77,6 +77,13 @@ input[type="color"]::-webkit-color-swatch:hover {
     border: none;
     margin-top: 1rem;
     width: 100%;
+    transition: all 0.2s ease;
+}
+
+.desabilita {
+    opacity: 0.5;
+    filter: grayscale(.8);
+    pointer-events: none;
 }
 
 .radio-btn {

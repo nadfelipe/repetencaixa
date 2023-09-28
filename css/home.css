@@ -11,6 +11,7 @@
 
 #titulo-home {
     width: 75%;
+    line-height: 4.9rem;
 }
 
 .texto-apresentacao {
@@ -43,6 +44,7 @@
 
 #titulo-hiw {
     width: 50%;
+    line-height: 3.8rem;
 }
 
 .lista-hiw {
