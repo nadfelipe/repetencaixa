@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Urbanist:wght@400;600&display=swap');
 
 :root {
-  --black: #1d1d1b;
+  --black: #1c1c1c;
   --white: #FFFCEE;
   --background: #332783;
   --primary: #FF6689;
@@ -107,10 +107,6 @@ canvas {
   padding: 10px 20px;
   background-color: var(--background);
   color: var(--white);
-}
-
-.links-menu>li:first-child {
-  margin-right: 1rem;
 }
 
 .links-menu>li>a {
