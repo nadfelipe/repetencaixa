@@ -41,6 +41,13 @@ function draw() {
   setModoMovimento();
 }
 
+function resize() {
+  let w = document.getElementById('widthCanva').value
+  let h = document.getElementById('heightCanva').value
+  resizeCanvas(w, h)
+  atualizarConteudo();
+}
+
 function setMovimento(palavra) {
   switch (modoMovimento) {
     case "treme":
