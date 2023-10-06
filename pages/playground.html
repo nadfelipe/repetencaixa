@@ -37,17 +37,19 @@
       </header>
       <section id="gerador-layout-section" class="flex">
         <div id="controles" class="flex-column">
-          <div class="mt1">
-            <input type="number" name="widthCanva" id="widthCanva" value="1080">
-            <label class="label-alt" for="widthCanva">Largura do Layout</label>
+          <div style="display: none;">
+            <div class="mt1">
+              <input type="number" name="widthCanva" id="widthCanva" value="1080">
+              <label class="label-alt" for="widthCanva">Largura do Layout</label>
+            </div>
+  
+            <div class="mt1">
+              <input type="number" name="heightCanva" id="heightCanva" value="1080">
+              <label class="label-alt" for="heightCanva">Altura do Layout</label>
+            </div>
+  
+            <button class="btn" onclick="resize()">Atualizar Tamanho</button>
           </div>
-
-          <div class="mt1">
-            <input type="number" name="heightCanva" id="heightCanva" value="1080">
-            <label class="label-alt" for="heightCanva">Altura do Layout</label>
-          </div>
-
-          <button class="btn" onclick="resize()">Atualizar Tamanho</button>
 
           <div class="flex-column mt1">  
             <label for="frase">Texto</label>
